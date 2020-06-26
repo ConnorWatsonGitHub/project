@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+    Connor Watson - 200424828
+    COMP1073 - Course Project - Phase One
+    June 23rd 2020
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>To-Do List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" async></script>
+
+</head>
+
+<body class="container">
+    <header>
+
+        <h1>Tasks To-Do Today</h1>
+
+    </header>
+    <main>
+        <label>Percentage of Tasks Completed:</label>
+        <!-- Progress Bar -->
+        <div id="myProgress">
+            <div id="myBar"></div>
+        </div>
+        <!-- Setting up input and labels -->
+        <label for="newTask">Enter Task</label>
+        <input type="text" id="newTask" class="form-control" name="newTask">
+        <button id="submit" class="btn btn-dark">Submit</button>
+        <!-- Setting up list element for the tasks -->
+        <div>
+            <label>Tasks to be Completed:</label><br>
+            <ul>
+
+            </ul>
+        </div>
+
+    </main>
+    <footer>
+
+        <audio id="audio" src="ding.mp3" type="audio/mpeg"></audio>
+    </footer>
+</body>
+
+</html>
