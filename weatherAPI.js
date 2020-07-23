@@ -6,20 +6,20 @@
 //part of the navigator API. will save the current position (lat and long)
 function getWeather(position) {
     try {
-    //saving the latitude and longitude
-    let latitude = position.coords.latitude;
-    let longitude = position.coords.longitude;
+        //saving the latitude and longitude
+        let latitude = position.coords.latitude;
+        let longitude = position.coords.longitude;
 
-    //Instatiate new XMLHttpRequest object 
-    const Http = new XMLHttpRequest();
-    //URL to weatherunlockedapi
-    //added a proxy of cors-anywhere to allow a cross-orgin request
-    let url = "https://cors-anywhere.herokuapp.com/http://api.weatherunlocked.com/api/current/" + latitude + "," + longitude + "?app_id=0a3bdae3&app_key=24f675edf002ea1e74ef3ec002d31fc5";
-    Http.open("GET", url);
-    //send Http request
-    Http.send();
-    //when the request is rechieved work with the responseText
-    Http.onload = (e) => {
+        //Instatiate new XMLHttpRequest object 
+        const Http = new XMLHttpRequest();
+        //URL to weatherunlockedapi
+        //added a proxy of cors-anywhere to allow a cross-orgin request
+        let url = "https://cors-anywhere.herokuapp.com/http://api.weatherunlocked.com/api/current/" + latitude + "," + longitude + "?app_id=0a3bdae3&app_key=24f675edf002ea1e74ef3ec002d31fc5";
+        Http.open("GET", url);
+        //send Http request
+        Http.send();
+        //when the request is rechieved work with the responseText
+        Http.onload = (e) => {
             //saving the text form the response as a JSON object
             let weatherInfo = JSON.parse(Http.responseText);
             //saving the DOM objects of the label for temp and the img for the weather gif
@@ -33,8 +33,7 @@ function getWeather(position) {
             img.setAttribute("alt", weatherInfo.wx_desc);
             img.setAttribute("title", weatherInfo.wx_desc);
         };
-    }
-    catch (e) {
+    } catch (e) {
         //calls the error function and passes the exception 
 
         error(e);
@@ -54,6 +53,3 @@ function error(e) {
 //Making sure the page has loaded before displaying the weather
 let header = document.querySelector("header");
 header.addEventListener("load", navigator.geolocation.getCurrentPosition(getWeather, error));
-
-
-

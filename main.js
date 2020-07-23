@@ -48,7 +48,6 @@ function taskSubmit(newTaskText) {
 
             //adding event listeners to new elements
             newCheckboxElement.addEventListener('change', function () {
-                //add something here to make it look nicer
                 //line through the list element it's text accociated with it
                 moveSelectedElements(newCheckboxElement);
             });
@@ -135,7 +134,7 @@ function tasksFromLocalStorage() {
         //sperating the string into an array
         let savedTasksArray = savedTasksString.split("|");
         //walking through the array and adding each task (first and last entry will not be added as they are empty strings)
-        for (var i = 0; i < savedTasksArray.length; i++){
+        for (var i = 0; i < savedTasksArray.length; i++) {
             taskSubmit(savedTasksArray[i]);
         }
     }
@@ -160,7 +159,7 @@ textBoxInput.focus();
 textBoxInput.value = '';
 
 //event Listeners ***Update for Phase 2, added passing the textbox input value as an arg***
-button.addEventListener('click', function(event){
+button.addEventListener('click', function (event) {
     taskSubmit(textBoxInput.value);
 });
 textBoxInput.addEventListener('keyup', function (event) {
@@ -173,4 +172,3 @@ textBoxInput.addEventListener('keyup', function (event) {
 //Making sure the page has loaded before checking the local storage for tasks 
 let body = document.querySelector("body");
 body.addEventListener("load", tasksFromLocalStorage());
-

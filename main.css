@@ -1,4 +1,5 @@
-main, h1 {
+main,
+h1 {
     position: relative;
     font-family: "Lucida Console", Monaco, monospace;
     top: 45px;
@@ -19,7 +20,8 @@ ul {
     margin: 0px;
 }
 
-#submit, #save {
+#submit,
+#save {
     margin-top: 5px;
 }
 
