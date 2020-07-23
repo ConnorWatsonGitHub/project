@@ -12,18 +12,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <!-- stylesheet to get a refresh symbol -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="main.css">
     <script src="main.js" async></script>
+    <!-- Javascript for weatherunlocked API -->
+    <script src="weatherAPI.js" async defer></script>
+    <!-- Local Storage API through browser -->
+    <script src="storageAPI.js" async defer></script>
 
 </head>
 
 <body class="container">
     <header>
-
         <h1>Tasks To-Do Today</h1>
-
+        <!-- information about the weather in header -->        
+        <div class = "weather">
+            <label id = "weatherLabel"></label>
+            <img id = "weatherImg">
+        </div>
     </header>
-    <main>
+    <main id="content">
         <label>Percentage of Tasks Completed:</label>
         <!-- Progress Bar -->
         <div id="myProgress">
@@ -33,17 +43,24 @@
         <label for="newTask">Enter Task</label>
         <input type="text" id="newTask" class="form-control" name="newTask">
         <button id="submit" class="btn btn-dark">Submit</button>
+        <button id="save" class="btn btn-dark">Save Tasks</button>
         <!-- Setting up list element for the tasks -->
         <div>
             <label>Tasks to be Completed:</label><br>
+            <p class=error id="promt"></p>
             <ul>
+
+            </ul>
+            <ul id="completedTasks">
 
             </ul>
         </div>
 
     </main>
     <footer>
-
+        <p><small>Connor Watson - COMP 1073 - Course Project | Weather
+                Infomation Courtesy of <a
+                    href="https://developer.weatherunlocked.com/documentation">WeatherUnlocked.com</a> </small> </p>
         <audio id="audio" src="ding.mp3" type="audio/mpeg"></audio>
     </footer>
 </body>
