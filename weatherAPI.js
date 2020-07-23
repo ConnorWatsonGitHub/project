@@ -14,7 +14,7 @@ function getWeather(position) {
     const Http = new XMLHttpRequest();
     //URL to weatherunlockedapi
     let url = "https://api.weatherunlocked.com/api/current/" + latitude + "," + longitude + "?app_id=0a3bdae3&app_key=24f675edf002ea1e74ef3ec002d31fc5";
-    Http.open("GET", url);
+    Http.open("POST", url);
     //send Http request
     Http.send();
     //when the request is rechieved work with the responseText
@@ -51,8 +51,8 @@ function error(e) {
 
 
 //Making sure the page has loaded before displaying the weather
-let body = document.querySelector("body");
-body.addEventListener("load", navigator.geolocation.getCurrentPosition(getWeather, error));
+let header = document.querySelector("header");
+header.addEventListener("load", navigator.geolocation.getCurrentPosition(getWeather, error));
 
 
 

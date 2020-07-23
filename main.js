@@ -171,5 +171,6 @@ textBoxInput.addEventListener('keyup', function (event) {
 
 
 //Making sure the page has loaded before checking the local storage for tasks 
+let body = document.querySelector("body");
 body.addEventListener("load", tasksFromLocalStorage());
 
