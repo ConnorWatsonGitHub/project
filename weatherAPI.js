@@ -13,6 +13,7 @@ function getWeather(position) {
     //Instatiate new XMLHttpRequest object 
     const Http = new XMLHttpRequest();
     //URL to weatherunlockedapi
+    //added a proxy of cors-anywhere to allow a cross-orgin request
     let url = "https://cors-anywhere.herokuapp.com/http://api.weatherunlocked.com/api/current/" + latitude + "," + longitude + "?app_id=0a3bdae3&app_key=24f675edf002ea1e74ef3ec002d31fc5";
     Http.open("GET", url);
     //send Http request
