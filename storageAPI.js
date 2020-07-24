@@ -15,7 +15,7 @@ function saveTasks() {
         window.localStorage.setItem("tasks", textToSave);
         //promting the user that the tasks saved successfully
         promtMsg.className = "success";
-        promtMsg.textContent = "Completed Tasks Successfully Saved to Local Storage";
+        promtMsg.textContent = "Uncompleted Tasks Successfully Saved to Local Storage";
 
     } catch (error) {
         //setting the text in the P element with id error to display the error that occurs
